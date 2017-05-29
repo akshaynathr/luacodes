@@ -19,7 +19,7 @@ before_install:
     # - luarock
 script:
 # Don't fail due to luacheck
-    - lua queue.lua
+    - sh test.sh
 
 #after_success:
 #          #  - luacov-coveralls -e $TRAVIS_BUILD_DIR/lua_install
