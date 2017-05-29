@@ -15,8 +15,8 @@ before_install:
       - luarocks install luacheck
       - luarocks install luacov
     #  - luarocks install luacov-coveralls
-install:
-     - luarocks make rockspecs/foo-scm-0.rockspec 
+    #install:
+    # - luarock
 script:
 # Don't fail due to luacheck
     - luacheck --std max tlc typedlua queue.lua || true
