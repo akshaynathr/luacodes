@@ -16,7 +16,7 @@ before_install:
       - luarocks install luacov
     #  - luarocks install luacov-coveralls
 install:
-     - luarocks make rockspecs/foo-scm-0.rockspec CFLAGS="-O2 -fPIC -ftest-coverage -fprofile-arcs" LIBFLAG="-shared --coverage"
+     - luarocks make rockspecs/foo-scm-0.rockspec 
 script:
 # Don't fail due to luacheck
     - luacheck --std max tlc typedlua queue.lua || true
