@@ -16,11 +16,12 @@ before_install:
       - luarocks install luacov
     #  - luarocks install luacov-coveralls
 install:
-      - luarocks make
+     - luarocks make rockspecs/foo-scm-0.rockspec CFLAGS="-O2 -fPIC -ftest-coverage -fprofile-arcs" LIBFLAG="-shared --coverage"
 script:
 # Don't fail due to luacheck
-- luacheck --std max tlc typedlua test.lua || true
-- lua -lluacov test.lua
-#
-#          #after_success:
+    - luacheck --std max tlc typedlua queue.lua || true
+    - lua -lluacov queue.lua
+
+
+#after_success:
 #          #  - luacov-coveralls -e $TRAVIS_BUILD_DIR/lua_install
