@@ -19,9 +19,7 @@ before_install:
     # - luarock
 script:
 # Don't fail due to luacheck
-    - luacheck --std max tlc typedlua queue.lua || true
-    - lua -lluacov queue.lua
-
+    -lua queue.lua
 
 #after_success:
 #          #  - luacov-coveralls -e $TRAVIS_BUILD_DIR/lua_install
